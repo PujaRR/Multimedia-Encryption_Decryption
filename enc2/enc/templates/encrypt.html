@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Encryption</title>
+    <link rel="stylesheet" href="../static/encrypt.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const popupMessage = document.getElementById("popup-message");
+        if (popupMessage && popupMessage.innerText.trim() !== "") {
+          alert(popupMessage.innerText); // Display the message as a popup
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container1">
+        <h1 class="logo">Encrypt & Decrypt Converter</h1>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Encrypt a File (Supports Audio, Video, Images, and Documents)</h1>
+      <form method="POST" enctype="multipart/form-data">
+        <input
+          type="file"
+          name="file"
+          accept=".mp3,.mp4,.wav,.avi,.jpg,.jpeg,.png,.txt,.pdf"
+          required
+        /><br /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Set a Password"
+          required
+        /><br /><br />
+        <input
+          type="email"
+          name="email"
+          placeholder="Recipient's Email"
+          required
+        /><br /><br />
+        <button type="submit" class="btn">Encrypt and Send</button>
+      </form>
+      <br />
+      <a href="{{ url_for('decrypt_file') }}">
+        <button class="btn">Go to Decrypt Page</button>
+      </a>
+    </div>
+
+    <!-- Hidden div for flash message -->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <div id="popup-message" style="display: none">
+      {% for category, message in messages %} {% if category == "success" %} {{
+      message }} {% endif %} {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
+  </body>
+</html>

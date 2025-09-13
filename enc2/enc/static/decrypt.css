@@ -1,0 +1,129 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+  color: #fff;
+  padding: 1rem;
+}
+
+/* Container Styling */
+.container {
+  max-width: 500px;
+  width: 100%;
+  background-color: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffea00;
+}
+
+/* Input Fields Styling */
+input[type="file"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #444;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+input[type="file"] {
+  padding: 0.5rem;
+}
+
+input[type="file"]:hover,
+input[type="password"]:hover {
+  border-color: #ffea00;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #ff9800;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e68a00;
+}
+
+/* Error Message Styling */
+.error {
+  color: #ff4d4d;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.error li {
+  background: rgba(255, 77, 77, 0.1);
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+/* Link Button Styling */
+a {
+  text-decoration: none;
+}
+
+a .btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
